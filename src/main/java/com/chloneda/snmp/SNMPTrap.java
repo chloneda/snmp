@@ -46,7 +46,7 @@ public class SNMPTrap implements CommandResponder {
             e.printStackTrace();
         }
         snmp.addCommandResponder(this);
-        System.out.println("---- Trap Receiver listening，waiting Trap message  ----");
+        System.out.println("---- Trap Receiver is listening the trap message  ----");
     }
 
     private void listen() throws IOException {
@@ -99,11 +99,6 @@ public class SNMPTrap implements CommandResponder {
             System.out.println(key + " = " + value);
         }
         System.out.println("---- End ----");
-    }
-
-    public static void main(String[] args) {
-        SNMPTrap trapReceiver = new SNMPTrap(
-                "192.167.2.120", 1623, SnmpConstants.version3, "public");
     }
 
 }

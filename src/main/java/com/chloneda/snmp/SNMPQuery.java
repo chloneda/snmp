@@ -74,7 +74,6 @@ public class SNMPQuery {
             TransportMapping transport = new DefaultUdpTransportMapping();
             snmp = new Snmp(transport);
             if (version == SnmpConstants.version3) {
-                // 设置安全模式
                 USM usm = new USM(SecurityProtocols.getInstance(), new OctetString(MPv3.createLocalEngineID()), 0);
                 SecurityModels.getInstance().addSecurityModel(usm);
             }
@@ -92,7 +91,7 @@ public class SNMPQuery {
         if (version == SnmpConstants.version3) {
             setPriProtocolBean(privProtocol);
             setAuthProtocolBean(authProtocol);
-            // 添加用户
+
             snmp.getUSM().addUser(new OctetString(securityName)
                     , new UsmUser(
                             new OctetString(securityName)

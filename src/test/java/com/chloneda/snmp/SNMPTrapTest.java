@@ -19,6 +19,6 @@ public class SNMPTrapTest {
     @Test
     public void testTrap(){
         SNMPTrap trapReceiver = new SNMPTrap(
-                "192.167.2.120", 1623, SnmpConstants.version3, "public");
+                "192.167.1.120", 1623, SnmpConstants.version3, "public");
     }
 }
